@@ -1,0 +1,55 @@
+﻿@page
+@model PgJobs.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Job</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Job.LastDate" class="control-label"></label>
+                <input asp-for="Job.LastDate" class="form-control" />
+                <span asp-validation-for="Job.LastDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Job.ThisDate" class="control-label"></label>
+                <input asp-for="Job.ThisDate" class="form-control" />
+                <span asp-validation-for="Job.ThisDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Job.NextDate" class="control-label"></label>
+                <input asp-for="Job.NextDate" class="form-control" />
+                <span asp-validation-for="Job.NextDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Job.Interval" class="control-label"></label>
+                <input asp-for="Job.Interval" class="form-control" />
+                <span asp-validation-for="Job.Interval" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Job.What" class="control-label"></label>
+                <textarea rows="10" asp-for="Job.What" class="form-control"></textarea>
+                <span asp-validation-for="Job.What" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
